@@ -3,7 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  recipe_ingredients = [] # to append ingredients into
+  for key in recipe:
+    if ingredients.get(key) is not None:
+      recipe_ingredients.append(ingredients[key] // recipe[key])
+    else:
+      recipe_ingredients.append(0)
+  return min(recipe_ingredients)
+  
+
 
 
 if __name__ == '__main__':
